@@ -7,15 +7,31 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11 -Wall -O0 -g")
 set(EXTERNAL ${CMAKE_CURRENT_SOURCE_DIR}/external)
 set(GTEST ${EXTERNAL}/googletest)
 
+set(AWS_ROOT ${EXTERNAL}/aws-sdk-cpp)
+set(AWS_BUILD ${AWS_ROOT}/build)
+set(S3_DIR ${AWS_ROOT}/aws-cpp-sdk-s3)
+
+set(AWS_INCLUDES
+    ${S3_DIR}/include
+    ${AWS_ROOT}/aws-cpp-sdk-core/include
+)
+
+set(AWS_LINKS
+    ${AWS_BUILD}/aws-cpp-sdk-s3
+    ${AWS_BUILD}/aws-cpp-sdk-core
+)
+
 include_directories(
     ${GTEST}/googletest/include
     ${GTEST}/googlemock/include
     ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${AWS_INCLUDES}
     /usr/local/include
 )
 
 link_directories(
     ${GTEST}/build/googlemock
+    ${AWS_LINKS}
     /usr/local/lib
 )
 
@@ -23,6 +39,10 @@ set(COMMON_LIBS
     folly
     event
     glog
+    aws-cpp-sdk-s3
+    aws-cpp-sdk-core
+    crypto
+    curl
     pthread
     atomic
 )

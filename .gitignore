@@ -17,4 +17,5 @@ dist
 *.tar.gz
 *.egg-info
 .cache
+.envrc-extra
 
