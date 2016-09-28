@@ -1,8 +1,16 @@
 #pragma once
+#include <string>
+
+namespace Aws { namespace Utils {
+
+class DateTime;
+
+}} // Aws::Utils
+
 
 namespace awscratch { namespace util {
 
-void doNothing();
+std::string toISO8601(const Aws::Utils::DateTime&);
 
 }} // awscratch::util
 

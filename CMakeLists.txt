@@ -14,11 +14,16 @@ set(S3_DIR ${AWS_ROOT}/aws-cpp-sdk-s3)
 set(AWS_INCLUDES
     ${S3_DIR}/include
     ${AWS_ROOT}/aws-cpp-sdk-core/include
+    ${AWS_ROOT}/aws-cpp-sdk-elasticache/include
+    ${AWS_ROOT}/aws-cpp-sdk-ec2/include
+
 )
 
 set(AWS_LINKS
     ${AWS_BUILD}/aws-cpp-sdk-s3
     ${AWS_BUILD}/aws-cpp-sdk-core
+    ${AWS_BUILD}/aws-cpp-sdk-elasticache
+    ${AWS_BUILD}/aws-cpp-sdk-ec2
 )
 
 include_directories(
@@ -41,6 +46,8 @@ set(COMMON_LIBS
     glog
     aws-cpp-sdk-s3
     aws-cpp-sdk-core
+    aws-cpp-sdk-elasticache
+    aws-cpp-sdk-ec2
     crypto
     curl
     pthread

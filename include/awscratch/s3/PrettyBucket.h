@@ -14,7 +14,7 @@ class PrettyBucket {
   const Bucket& bucket_;
  public:
   PrettyBucket(const Bucket &bucket): bucket_(bucket){}
-  void printTo(std::ostream& oss) const {
+  void pprintTo(std::ostream& oss) const {
     oss << "Bucket"
         << "['" << bucket_.GetName() << "']"
         << "  :  "
@@ -24,8 +24,8 @@ class PrettyBucket {
 
 }} // awscratch::s3
 
-std::ostream& operator<<(std::ostream& oss,
-    const awscratch::s3::PrettyBucket& bucket) {
-  bucket.printTo(oss);
-  return oss;
-}
+// std::ostream& operator<<(std::ostream& oss,
+//     const awscratch::s3::PrettyBucket& bucket) {
+//   bucket.printTo(oss);
+//   return oss;
+// }

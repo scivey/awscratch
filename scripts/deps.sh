@@ -34,18 +34,6 @@ function build-aws-sdk() {
             make aws-cpp-sdk-${lib} -j8
         fi
     done
-    # if [[ ! -f "aws-cpp-sdk-s3/libaws-cpp-sdk-s3.a" ]]; then
-    #     make aws-cpp-sdk-s3 -j8
-    # fi
-
-    # if [[ ! -f "aws-cpp-sdk-ec2/libaws-cpp-sdk-ec2.a" ]]; then
-    #     make aws-cpp-sdk-ec2 -j8
-    # fi
-
-    # if [[ ! -f "aws-cpp-sdk-elasticache/libaws-cpp-sdk-elasticache.a" ]]; then
-    #     make aws-cpp-sdk-elasticache -j8
-    # fi
-
     popd
     popd
 }

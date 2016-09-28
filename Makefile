@@ -3,6 +3,7 @@ deps:
 
 clean:
 	rm -rf build
+	rm -f *.log
 
 base: deps
 	mkdir -p build && cd build && cmake ../
